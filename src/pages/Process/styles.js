@@ -20,3 +20,5 @@ export const Header = styled.View`
 `;
 
 export const TitleHome = styled(Title)``;
+
+export const CasesList = styled.FlatList``;

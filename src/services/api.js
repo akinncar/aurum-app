@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api.github.com',
+  baseURL: 'http://frontendtest.aurum.com.br:3000',
+  headers: {'x-frontend-test': 'aurumtest'},
 });
 
 export default api;
