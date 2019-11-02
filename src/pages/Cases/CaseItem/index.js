@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {Container, Title, NumberContainer, NumberLabel, Number} from './styles';
+import {Container, Title, InfoContainer, Label, Span} from './styles';
 
 function CaseItem({children}) {
   return (
     <Container>
-      <Title>{children.title.toLowerCase()}</Title>
-      <NumberContainer>
-        <NumberLabel>Número</NumberLabel>
-        <Number>{children.number}</Number>
-      </NumberContainer>
+      <Title>{children.title}</Title>
+      <InfoContainer>
+        <Label>Número</Label>
+        <Span>{children.number}</Span>
+      </InfoContainer>
     </Container>
   );
 }

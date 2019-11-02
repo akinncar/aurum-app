@@ -3,9 +3,8 @@ import colors from '~/styles/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const Container = styled.SafeAreaView`
-  height: 100px;
-  padding: 12px;
   background: ${colors.white};
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top-width: 0.5px;
@@ -22,8 +21,8 @@ export const Header = styled.View`
   border-bottom-color: ${colors.light};
 `;
 
-export const Title = styled.Text`
-  font-size: 16px;
+export const TitleHeader = styled.Text`
+  font-size: 20px;
   font-weight: 600;
   text-transform: capitalize;
   color: ${colors.text};
@@ -32,4 +31,9 @@ export const Title = styled.Text`
 
 export const MaterialIcon = styled(Icon)`
   margin: 0 12px;
+`;
+
+export const Body = styled.ScrollView`
+  height: 100%;
+  width: 100%;
 `;

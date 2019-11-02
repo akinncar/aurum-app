@@ -1,10 +1,23 @@
 import React from 'react';
 import {TouchableOpacity} from 'react-native';
+import {formatPrice} from '~/util/format';
 
-import {Container, Header, Title, MaterialIcon} from './styles';
+import Details from './Details';
+import History from './History';
+
+import {
+  Container,
+  Header,
+  TitleHeader,
+  MaterialIcon,
+  Body,
+  TitleCase,
+} from './styles';
 import colors from '~/styles/colors';
 
 function CaseDetail({navigation}) {
+  const item = navigation.state.params.item;
+
   return (
     <Container>
       <Header>
@@ -15,7 +28,7 @@ function CaseDetail({navigation}) {
             color={`${colors.primary}`}
           />
         </TouchableOpacity>
-        <Title>Processo</Title>
+        <TitleHeader>Processo</TitleHeader>
         <TouchableOpacity onPress={() => {}}>
           <MaterialIcon
             name="insert-link"
@@ -24,6 +37,10 @@ function CaseDetail({navigation}) {
           />
         </TouchableOpacity>
       </Header>
+      <Body>
+        <Details>{item}</Details>
+        <History>{item.historicals}</History>
+      </Body>
     </Container>
   );
 }

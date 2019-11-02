@@ -55,7 +55,7 @@ function Cases({isFocused, navigation}) {
             item.title.toLowerCase().includes(filter.toLowerCase()) && (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('CaseDetail');
+                  navigation.navigate('CaseDetail', {item});
                 }}>
                 <CaseItem>{item}</CaseItem>
               </TouchableOpacity>

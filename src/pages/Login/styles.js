@@ -5,7 +5,10 @@ import Title from '~/components/Title';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.KeyboardAvoidingView.attrs({
+  enabled: Platform.OS === 'ios',
+  behavior: 'padding',
+})`
   flex: 1;
   align-items: center;
   justify-content: center;

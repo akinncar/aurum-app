@@ -2,16 +2,16 @@ import styled from 'styled-components/native';
 import colors from '~/styles/colors';
 
 export const Container = styled.View`
-  height: 100px;
-  padding: 12px;
+  width: 100%;
+  padding: 14px 24px;
   background: ${colors.white};
   justify-content: center;
   align-items: flex-start;
-  border-top-width: 0.5px;
-  border-top-color: ${colors.lightGray};
+  border-bottom-width: 1px;
+  border-bottom-color: ${colors.light};
 `;
 
-export const Title = styled.Text`
+export const TitleCase = styled.Text`
   font-size: 16px;
   font-weight: 600;
   text-transform: capitalize;
@@ -21,16 +21,18 @@ export const Title = styled.Text`
 
 export const InfoContainer = styled.View`
   justify-content: flex-start;
+  margin: 8px 0;
 `;
 
 export const Label = styled.Text`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: ${colors.lightGray};
 `;
 
 export const Span = styled.Text`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: ${colors.text};
+  text-transform: capitalize;
 `;
