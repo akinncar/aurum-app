@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
+import colors from '~/styles/colors';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Title from '~/components/Title';
 
@@ -12,13 +13,18 @@ export const Container = styled.SafeAreaView`
 
 export const Header = styled.View`
   flex-direction: row;
-  width: 80%;
+  height: 100px;
+  width: 90%;
   justify-content: space-between;
   align-items: center;
-  /* background: red; */
-  margin-bottom: 20px;
+`;
+
+export const MaterialIcon = styled(Icon)`
+  margin: 0 12px;
 `;
 
 export const TitleHome = styled(Title)``;
 
-export const CasesList = styled.FlatList``;
+export const CasesList = styled.FlatList`
+  width: 95%;
+`;

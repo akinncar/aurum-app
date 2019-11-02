@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Container, TitleLogin, TextInput, SubmitButton} from './styles';
 
-export default function Login({navigation}) {
+function Login({navigation}) {
   return (
     <Container resizeMode="contain">
       <TitleLogin>Login</TitleLogin>
@@ -23,10 +23,12 @@ export default function Login({navigation}) {
       />
       <SubmitButton
         onPress={() => {
-          navigation.navigate('Process');
+          navigation.navigate('Cases');
         }}>
         Entrar
       </SubmitButton>
     </Container>
   );
 }
+
+export default Login;

@@ -6,24 +6,45 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Login from '~/pages/Login';
-import Process from '~/pages/Process';
+import Cases from '~/pages/Cases';
+import CaseDetail from '~/pages/CaseDetail';
+import Profile from '~/pages/Profile';
 
 import {BottomItem, Text} from './styles';
 import {colors} from '../styles';
 
+const CasesStack = createStackNavigator(
+  {
+    Cases: {
+      screen: Cases,
+    },
+    CaseDetail: {
+      screen: CaseDetail,
+    },
+  },
+  {
+    headerMode: 'none',
+  },
+);
+
 const Routes = createAppContainer(
   createSwitchNavigator({
-    Sign: createStackNavigator({
-      Login,
-    }),
+    Sign: createStackNavigator(
+      {
+        Login,
+      },
+      {
+        headerMode: 'none',
+      },
+    ),
     Main: createBottomTabNavigator({
-      Process: {
-        screen: Process,
+      Cases: {
+        screen: CasesStack,
         navigationOptions: {
           tabBarIcon: ({tintColor}) => {
             return (
               <BottomItem>
-                <Text tintColor={tintColor}>PROCESSOS</Text>
+                <Text tintColor={tintColor}>Cases</Text>
                 <Icon name="folder" size={18} color={tintColor} />
               </BottomItem>
             );
@@ -40,7 +61,7 @@ const Routes = createAppContainer(
         },
       },
       Profile: {
-        screen: Process,
+        screen: Profile,
         navigationOptions: {
           tabBarIcon: ({tintColor}) => {
             return (
