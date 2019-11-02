@@ -19,8 +19,6 @@ export default {
   textTertiary: '#A8A3A3',
   textFourty: '#BAB8C7',
   inputLine: '#E4E4E4',
-  inputLineActive: '#8078B8',
-  termsOfUse: '#32BEA6',
 
   transparent: 'transparent',
   darkTransparent: 'rgba(0, 0, 0, 0.6)',
