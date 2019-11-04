@@ -3,11 +3,13 @@ import {TouchableOpacity, ActivityIndicator} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {withNavigationFocus} from 'react-navigation';
 import CaseItem from './CaseItem';
+
 import InputSearch from '~/components/InputSearch';
+import Title from '~/components/Title';
 
 import {casesRequestAll} from '~/store/modules/cases/actions';
 
-import {Container, Header, MaterialIcon, TitleHome, CasesList} from './styles';
+import {Container, Header, MaterialIcon, CasesList} from './styles';
 import colors from '~/styles/colors';
 
 function Cases({isFocused, navigation}) {
@@ -34,7 +36,7 @@ function Cases({isFocused, navigation}) {
             value={filter}
           />
         ) : (
-          <TitleHome>Processos</TitleHome>
+          <Title>Processos</Title>
         )}
         <TouchableOpacity onPress={() => setFilterActive(!filterActive)}>
           <MaterialIcon name="search" size={24} color={`${colors.primary}`} />

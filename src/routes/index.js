@@ -27,63 +27,67 @@ const CasesStack = createStackNavigator(
   },
 );
 
-const Routes = createAppContainer(
-  createSwitchNavigator({
-    Sign: createStackNavigator(
+export default (isSigned = false) =>
+  createAppContainer(
+    createSwitchNavigator(
       {
-        Login,
+        Sign: createStackNavigator(
+          {
+            Login,
+          },
+          {
+            headerMode: 'none',
+          },
+        ),
+        Main: createBottomTabNavigator({
+          Cases: {
+            screen: CasesStack,
+            navigationOptions: {
+              tabBarIcon: ({tintColor}) => {
+                return (
+                  <BottomItem>
+                    <Text tintColor={tintColor}>Cases</Text>
+                    <Icon name="folder" size={18} color={tintColor} />
+                  </BottomItem>
+                );
+              },
+              tabBarOptions: {
+                activeTintColor: colors.primary,
+                inactiveTintColor: colors.white,
+                showIcon: true,
+                showLabel: false,
+                style: {
+                  backgroundColor: colors.darker,
+                },
+              },
+            },
+          },
+          Profile: {
+            screen: Profile,
+            navigationOptions: {
+              tabBarIcon: ({tintColor}) => {
+                return (
+                  <BottomItem>
+                    <Text tintColor={tintColor}>PERFIL</Text>
+                    <Icon name="user" size={18} color={tintColor} />
+                  </BottomItem>
+                );
+              },
+              tabBarOptions: {
+                activeTintColor: colors.primary,
+                inactiveTintColor: colors.white,
+                showIcon: true,
+                showLabel: false,
+                style: {
+                  backgroundColor: colors.darker,
+                },
+              },
+            },
+          },
+        }),
       },
       {
-        headerMode: 'none',
+        initialRouteName: isSigned ? 'Main' : 'Sign',
       },
     ),
-    Main: createBottomTabNavigator({
-      Cases: {
-        screen: CasesStack,
-        navigationOptions: {
-          tabBarIcon: ({tintColor}) => {
-            return (
-              <BottomItem>
-                <Text tintColor={tintColor}>Cases</Text>
-                <Icon name="folder" size={18} color={tintColor} />
-              </BottomItem>
-            );
-          },
-          tabBarOptions: {
-            activeTintColor: colors.primary,
-            inactiveTintColor: colors.white,
-            showIcon: true,
-            showLabel: false,
-            style: {
-              backgroundColor: colors.darker,
-            },
-          },
-        },
-      },
-      Profile: {
-        screen: Profile,
-        navigationOptions: {
-          tabBarIcon: ({tintColor}) => {
-            return (
-              <BottomItem>
-                <Text tintColor={tintColor}>PERFIL</Text>
-                <Icon name="user" size={18} color={tintColor} />
-              </BottomItem>
-            );
-          },
-          tabBarOptions: {
-            activeTintColor: colors.primary,
-            inactiveTintColor: colors.white,
-            showIcon: true,
-            showLabel: false,
-            style: {
-              backgroundColor: colors.darker,
-            },
-          },
-        },
-      },
-    }),
-  }),
-);
-
-export default Routes;
+  );

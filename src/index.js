@@ -1,19 +1,22 @@
 import React from 'react';
+import {StatusBar} from 'react-native';
 
 import '~/config/ReactotronConfig';
 
 import {Provider} from 'react-redux';
 import store from './store';
 
-import Routes from '~/routes';
+import App from '~/App';
 
-const App = () => (
-  (console.disableYellowBox = true),
-  (
+import color from '~/styles/colors';
+
+export default function Index() {
+  console.disableYellowBox = true;
+
+  return (
     <Provider store={store}>
-      <Routes />
+      <StatusBar barStyle="light-content" backgroundColor={color.primary} />
+      <App />
     </Provider>
-  )
-);
-
-export default App;
+  );
+}

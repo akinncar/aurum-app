@@ -10,7 +10,6 @@ export const Container = styled.View`
   align-items: center;
   border-bottom-width: 1px;
   border-bottom-color: ${colors.lightGray};
-  border-radius: 8px;
 `;
 
 export const TInput = styled.TextInput.attrs({

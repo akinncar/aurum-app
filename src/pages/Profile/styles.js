@@ -7,3 +7,12 @@ export const Container = styled.SafeAreaView`
   justify-content: center;
   background: ${colors.white};
 `;
+
+export const User = styled.Text`
+  font-size: 16px;
+  font-weight: 600;
+  width: 80%;
+  margin: 18px 0;
+  align-items: flex-start;
+  color: ${colors.text};
+`;

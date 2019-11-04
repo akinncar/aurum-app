@@ -1,43 +1,20 @@
-import {takeLatest, put, call, all} from 'redux-saga/effects';
+import {takeLatest, put, all} from 'redux-saga/effects';
 import {Alert} from 'react-native';
-import api from '../../../services/api';
 import {signInSuccess, signFailure} from './actions';
 
 export function* signIn({payload}) {
   try {
-    const {email, password} = payload;
-
-    const response = yield call(api.post, 'sessions', {
-      email,
-      password,
-    });
-
-    const {token, user} = response.data;
-
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-
-    yield put(signInSuccess(token, user));
-    Alert.alert(`Bem vindo, ${user.fullName}!`);
-
-    // history.push('/dashboard');
+    // Next line would pass token to header, in this case we haven't token
+    // api.defaults.headers.Authorization = `Bearer ${token}`;
+    yield put(signInSuccess(payload));
+    Alert.alert(`Bem vindo(a), ${payload.split('@')[0].toUpperCase()}!`);
   } catch (err) {
     yield put(signFailure());
   }
 }
 
-export function setToken({payload}) {
-  if (!payload) return;
-
-  const {token} = payload.auth;
-
-  if (token) {
-    api.defaults.headers.Authorization = `Bearer ${token}`;
-  }
-}
-
 export function signOut() {
-  Alert.alert(`Usuário desconectado!`);
-  // history.push('/');
+  Alert.alert('Usuário desconectado!');
 }
 
 export default all([

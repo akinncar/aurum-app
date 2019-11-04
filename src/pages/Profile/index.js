@@ -1,12 +1,25 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+import {signOut} from '~/store/modules/auth/actions';
 
-import {Container} from './styles';
+import Title from '~/components/Title';
+import Button from '~/components/Button';
 
-function Profile() {
+import {Container, User} from './styles';
+
+function Profile({navigation}) {
+  const dispatch = useDispatch();
+  const email = useSelector(state => state.auth.email);
+
+  async function handleSignOut() {
+    await dispatch(signOut());
+  }
+
   return (
     <Container resizeMode="contain">
-      <Text>Profile</Text>
+      <Title>usuário</Title>
+      <User>{email}</User>
+      <Button onPress={() => handleSignOut()}>Sair</Button>
     </Container>
   );
 }

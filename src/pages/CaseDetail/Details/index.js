@@ -1,9 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {formatPrice} from '~/util/format';
 
-import {Container, InfoContainer, Label, Span, TitleCase} from './styles';
+import {
+  Container,
+  InfoContainer,
+  Label,
+  Span,
+  TitleCase,
+  FileContainer,
+  ShowFile,
+  SpanFile,
+  DeleteFile,
+  MaterialIcon,
+} from './styles';
+import colors from '~/styles/colors';
+
+import {removeFile} from '~/store/modules/files/actions';
 
 function Details({children}) {
+  const files = useSelector(state => state.files.files);
+  const [file, setFiles] = useState();
+
+  const dispatch = useDispatch();
+
+  async function handleRemoveFile(id) {
+    await dispatch(removeFile(id));
+  }
+
+  useEffect(() => {
+    setFiles(files.find(f => f.id === children.id));
+  }, [files]);
+
   return (
     <Container>
       <TitleCase>{children.title}</TitleCase>
@@ -27,10 +55,23 @@ function Details({children}) {
         <Label>Valor</Label>
         <Span>{formatPrice(children.amount)}</Span>
       </InfoContainer>
-      <InfoContainer>
-        <Label>Anexo</Label>
-        <Span>SE TIVER ANEXO VAI SER AQUI</Span>
-      </InfoContainer>
+      {file && (
+        <InfoContainer>
+          <Label>Anexo</Label>
+          <FileContainer>
+            <ShowFile>
+              <SpanFile>{file.file.name}</SpanFile>
+            </ShowFile>
+            <DeleteFile onPress={() => handleRemoveFile(file.id)}>
+              <MaterialIcon
+                name="close"
+                size={24}
+                color={`${colors.darkTransparent}`}
+              />
+            </DeleteFile>
+          </FileContainer>
+        </InfoContainer>
+      )}
     </Container>
   );
 }

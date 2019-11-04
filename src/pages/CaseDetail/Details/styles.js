@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import colors from '~/styles/colors';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const Container = styled.View`
   width: 100%;
@@ -22,6 +23,7 @@ export const TitleCase = styled.Text`
 export const InfoContainer = styled.View`
   justify-content: flex-start;
   margin: 8px 0;
+  width: 100%;
 `;
 
 export const Label = styled.Text`
@@ -35,4 +37,32 @@ export const Span = styled.Text`
   font-weight: 600;
   color: ${colors.text};
   text-transform: capitalize;
+`;
+
+export const FileContainer = styled.View`
+  flex-direction: row;
+  max-width: 90%;
+  /* background: red; */
+  align-items: center;
+`;
+
+export const ShowFile = styled.TouchableOpacity`
+  background: ${colors.primary};
+  padding: 8px;
+  margin: 8px 0 0 0;
+  align-items: flex-start;
+  border-radius: 8px;
+`;
+
+export const SpanFile = styled.Text`
+  font-size: 14px;
+  font-weight: 600;
+  color: ${colors.white};
+  flex: 1;
+`;
+
+export const DeleteFile = styled.TouchableOpacity``;
+
+export const MaterialIcon = styled(Icon)`
+  margin: 14px;
 `;

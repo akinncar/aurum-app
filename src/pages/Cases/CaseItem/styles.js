@@ -3,7 +3,7 @@ import colors from '~/styles/colors';
 
 export const Container = styled.View`
   height: 100px;
-  padding: 12px;
+  padding: 14px 18px;
   background: ${colors.white};
   justify-content: center;
   align-items: flex-start;

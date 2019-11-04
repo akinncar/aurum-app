@@ -23,8 +23,6 @@ export const MaterialIcon = styled(Icon)`
   margin: 0 12px;
 `;
 
-export const TitleHome = styled(Title)``;
-
 export const CasesList = styled.FlatList`
-  width: 95%;
+  width: 100%;
 `;
