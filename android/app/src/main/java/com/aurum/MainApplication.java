@@ -4,13 +4,12 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
+// import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -74,15 +73,15 @@ public class MainApplication extends Application implements ReactApplication {
     }
   }
 
-  /**
-   * A list of packages used by the app. If the app uses additional views
-   * or modules besides the default ones, add more packages here.
-   */
-    @Override
-    protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new DocumentPickerPackage() // Add package
-      );
-    }
+  // /**
+  //  * A list of packages used by the app. If the app uses additional views
+  //  * or modules besides the default ones, add more packages here.
+  //  */
+  //   @Override
+  //   protected List<ReactPackage> getPackages() {
+  //     return Arrays.<ReactPackage>asList(
+  //         new MainReactPackage(),
+  //           new DocumentPickerPackage() // Add package
+  //     );
+  //   }
 }

@@ -1,7 +1,8 @@
+import { Platform } from 'react-native';
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  signed: false,
+  signed: Platform !== 'iOS' ? true : false,
   email: '',
 };
 

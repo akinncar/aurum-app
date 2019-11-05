@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {Alert} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {signInRequest} from '~/store/modules/auth/actions';
+import React, { useState } from 'react';
+import { Alert } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { signInRequest } from '~/store/modules/auth/actions';
 
-import {Container, TitleLogin, TextInput, SubmitButton} from './styles';
+import { Container, TitleLogin, TextInput, SubmitButton } from './styles';
 
-function Login({navigation}) {
+function Login({ navigation }) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
 
