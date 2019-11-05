@@ -47,3 +47,7 @@ Abrir o emulador android e executar o comando  no terminal  <br />
 
 Clique no link abaixo para conferir um video de demonstração do aplicativo sendo executado em um iPhone X.<br />
 [Vídeo](https://streamable.com/oxton)
+
+## Contato
+
+Akinn Rosa - [Github](https://github.com/akinncar) - **akinncar@hotmail.com**
