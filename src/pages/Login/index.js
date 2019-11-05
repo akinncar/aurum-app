@@ -7,7 +7,7 @@ import {Container, TitleLogin, TextInput, SubmitButton} from './styles';
 
 function Login({navigation}) {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('akinn@aurum.com.br');
+  const [email, setEmail] = useState('');
 
   async function handleSignIn() {
     const emailDomain = email.split('@')[1];
