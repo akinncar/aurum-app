@@ -14,7 +14,7 @@
     "@react-navigation/native": "^5.0.0-alpha.13",
     "axios": "^0.21.2",
     "date-fns": "^2.6.0",
-    "immer": "^8.0.1",
+    "immer": "^9.0.6",
     "intl": "^1.2.5",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
